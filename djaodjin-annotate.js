@@ -62,7 +62,7 @@ MIT License
          _this.$el.css({"border":"1px solid black"});
          if (_this.options.bootstrap){
             /*jshint multistr: true */
-            $('body').append('<div id="annotate_tools">\
+            $(_this.options.controlContainer).append('<div id="annotate_tools">\
                <a id="undoaction" title="Undo the last annotation" class="btn btn-primary '+class_position2+'"><i class="glyphicon glyphicon-arrow-left"></i></a>\
                <div class="'+ class_position1 +'" data-toggle="buttons">\
                <label class="btn btn-primary active">\
@@ -81,7 +81,7 @@ MIT License
                <a type="button" id="redoaction" title="Redo the last undone annotation" class="btn btn-primary ' + class_position2 +'"><i class="glyphicon glyphicon-arrow-right"></i></a>\
                </div>');
          }else{
-            $('body').append('<div id="annotate_tools" style="display:inline-block">\
+            $(_this.options.controlContainer).append('<div id="annotate_tools" style="display:inline-block">\
                <button id="undoaction">UNDO</button>\
                <input type="radio" name="tool_option" id="rectangle" checked>RECTANGLE\
                <input type="radio" name="tool_option" id="text"> TEXT\
@@ -384,6 +384,7 @@ MIT License
       type : 'rectangle',
       img: null,
       linewidth:2,
+      controlContainer: "body",
       fontsize:'20px',
       bootstrap: false,
       position: "top"
